@@ -71,6 +71,12 @@ export class MdlExpansionPanelHeaderSecondaryContentComponent { }
       state('true', style({ height: '*' })),
       state('false', style({ height: '0px' })),
       transition('* => *', animate('250ms ease-in'))
+      transition('false => true', [
+ +        style({ height: '0px' }),
+ +        animate('250ms ease-in')
+ +      ]),
+ +      transition('true => false', [
+ +        animate('250ms ease-in')
     ])
   ]
 })
